@@ -9,14 +9,14 @@
     <body>
         <form method="post">
             <label for="name">Name</label>
-            <input type="text" id="name" required />
+            <input type="text" id="name" name="name" required />
             <label for="lastname">Lastname</label>
-            <input type="text" id="lastname" />
+            <input type="text" id="lastname" name="lastname" />
             <br />
             <label>Breakfast options:</label>
             <br />
             <label for="tomato" id="tomato">Tomato</label>
-            <input type="checkbox" id="tomato" />
+            <input type="checkbox" id="tomato" name="checkbox" />
             <br />
             <select name="options">
                 <option value="choose">Choose one item</option>
@@ -45,9 +45,7 @@
             <input type="radio" name="buttons" id="juice" value="juice" />
             <label for="juice">Orange Juice</label>
             <br />
-            <input type="date" />
-            <br />
-            <input type="image" src="simon.jpg" width="70" height="70" />
+            <input type="date" name="date" />
             <br />
 
             <button type="submit">Submit</button>
@@ -60,32 +58,6 @@
                 <a href="#tomato">Tomatoo</a>
             </button>
             <hr />
-            <table>
-                <tr>
-                    <th>Firstname</th>
-                    <th>Lastname</th>
-                    <th>Age</th>
-                </tr>
-                <tr>
-                    <td>Jill</td>
-                    <td>Smith</td>
-                    <td>50</td>
-                </tr>
-                <tr>
-                    <td>Eve</td>
-                    <td>Jackson</td>
-                    <td>94</td>
-                </tr>
-                <tr>
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>80</td>
-                </tr>
-            </table>
-            <hr />
-            <code>
-                p { color: pink; font-weight: bold; margin-left: 2em; }
-            </code>
         </form>
     </body>
 </html>
