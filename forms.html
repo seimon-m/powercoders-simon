@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Forms</title>
+    </head>
+    <body>
+        <form onsubmit="alert('test')">
+            <label for="name">Name</label>
+            <input type="text" id="name" required />
+            <label for="lastname">Lastname</label>
+            <input type="text" id="lastname" />
+            <br />
+            <label>Breakfast options:</label>
+            <br />
+            <label for="tomato" id="tomato">Tomato</label>
+            <input type="checkbox" id="tomato" />
+            <br />
+            <select name="options">
+                <option value="choose">Choose one item</option>
+                <option value="Cheese">Cheese</option>
+                <option value="Eggs">Eggs</option>
+                <option value="Bacon">Bacon</option>
+            </select>
+            <br />
+            <textarea
+                name="inputtext"
+                cols="30"
+                rows="10"
+                placeholder="Write what you want please..."
+            ></textarea>
+            <br />
+            <input
+                type="radio"
+                name="buttons"
+                id="coffee"
+                value="coffee"
+                checked
+            />
+            <label for="coffee">Coffee</label>
+            <input type="radio" name="buttons" id="tea" value="tea" />
+            <label for="tea">Tea</label>
+            <input type="radio" name="buttons" id="juice" value="juice" />
+            <label for="juice">Orange Juice</label>
+            <br />
+            <input type="date" />
+            <br />
+            <input type="image" src="simon.jpg" width="70" height="70" />
+            <br />
+
+            <button type="submit">Submit</button>
+            <input type="reset" value="reset my breakfast" />
+            <hr />
+            <button type="button">
+                <a target="_" href="/anchors.html#section4">click me!</a>
+            </button>
+            <button type="button">
+                <a href="#tomato">Tomatoo</a>
+            </button>
+            <hr />
+            <table>
+                <tr>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Age</th>
+                </tr>
+                <tr>
+                    <td>Jill</td>
+                    <td>Smith</td>
+                    <td>50</td>
+                </tr>
+                <tr>
+                    <td>Eve</td>
+                    <td>Jackson</td>
+                    <td>94</td>
+                </tr>
+                <tr>
+                    <td>John</td>
+                    <td>Doe</td>
+                    <td>80</td>
+                </tr>
+            </table>
+            <hr />
+            <code>
+                p { color: pink; font-weight: bold; margin-left: 2em; }
+            </code>
+        </form>
+    </body>
+</html>
