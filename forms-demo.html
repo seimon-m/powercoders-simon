@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Form</title>
+    </head>
+    <body>
+        <form target="_self">
+            <label for="name">Name: </label>
+            <input type="text" id="name" />
+            <br />
+            <label for="email">Email: </label>
+            <input type="email" id="email" />
+            <br />
+            <label for="email">Password: </label>
+            <input type="password" id="password" />
+            <br />
+            <label for="button">Radiobutton:</label>
+            <input type="radio" name="button" id="red" value="red" />
+            <label for="red">Red</label>
+            <input type="radio" name="button" id="blue" value="blue" />
+            <label for="blue">Blue</label>
+            <input type="radio" name="button" id="green" value="green" />
+            <label for="green">Green</label>
+            <br />
+            <input type="date" name="datepicker" id="" />
+            <br />
+            <input type="range" id="volume" name="volume" min="0" max="11" />
+            <label for="volume">Volume</label>
+            <br />
+            <label for="textarea">Tell us something:</label>
+            <textarea
+                name="textarea"
+                id="textarea"
+                cols="30"
+                rows="10"
+            ></textarea>
+            <br />
+            <label for="pet-select">Choose a pet:</label>
+
+            <select name="pets" id="pet-select">
+                <option value="">--Please choose an option--</option>
+                <option value="dog">Dog</option>
+                <option value="cat">Cat</option>
+                <option value="hamster">Hamster</option>
+                <option value="parrot">Parrot</option>
+                <option value="spider">Spider</option>
+                <option value="goldfish">Goldfish</option>
+            </select>
+            <hr />
+            <input type="submit" />
+        </form>
+    </body>
+</html>
