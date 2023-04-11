@@ -24,10 +24,9 @@ main {
 }
 
 section {
-    display: flex;
-    gap: 1em;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 1em 1em;
 }
 
 article {
