@@ -1,0 +1,56 @@
+* {
+    margin:0;
+    padding: 0;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+html {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:flex-start;
+    gap: 3em;
+    width: 95%;
+    margin: 0 auto;
+}
+
+header {
+    width: 100%;
+}
+
+header ul {
+    margin-top: 2.2em;
+}
+
+header ul li {
+    display: inline-block;
+    width: 10%;
+    font-size: 1.2em;
+}
+
+header ul li:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+article {
+    width: 17.7%;
+}
+
+article img {
+    width: 100%;
+    height: 25vw;
+    object-fit: cover;
+}
+
+article img:hover {
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+}
