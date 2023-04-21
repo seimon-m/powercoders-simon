@@ -56,16 +56,18 @@ main {
 }
 
 .article:hover .overlay {
-    display: initial;
-    transition: all 0.5s ease;
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
 }
 .article:hover .text {
-    display: initial;
-    transition: all 0.5s ease;
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
 }
 
 .overlay {
-    display: none;
+    /* display: none; */
+    transition: all 0.5s ease-in-out;
+    opacity: 0;
     position: absolute;
     background: linear-gradient(
         180deg,
@@ -80,7 +82,9 @@ main {
 }
 
 .text {
-    display: none;
+    transition: all 0.5s ease-in-out;
+    /* display: none; */
+    opacity: 0;
     color: white;
     position: absolute;
     bottom: 1.5rem;
@@ -98,5 +102,4 @@ main {
 
 img {
     width: 100%;
-    z-index: -1;
 }
