@@ -73,48 +73,72 @@ const generateHTML = (item) => {
     personArticle.appendChild(textDiv);
     return personArticle;
 };
+let zurich_html = [];
+let bern_html = [];
+let lausanne_html = [];
+let all_html = [];
 
 zurich.addEventListener("click", () => {
     removeAllChildNodes(main);
-    zurich_list.forEach((item) => {
-        main.appendChild(generateHTML(item));
+    const zurich_people = powercoders.filter(
+        (person) => person.location === "Zurich"
+    );
+    if (!zurich_html.length) {
+        zurich_people.forEach((item) => {
+            zurich_html.push(generateHTML(item));
+        });
+    }
+    zurich_html.forEach((person) => {
+        main.appendChild(person);
     });
 });
 
 bern.addEventListener("click", () => {
     removeAllChildNodes(main);
-    bern_list.forEach((item) => {
-        main.appendChild(generateHTML(item));
+    const bern_people = powercoders.filter(
+        (person) => person.location === "Bern"
+    );
+    if (!bern_html.length) {
+        bern_people.forEach((item) => {
+            bern_html.push(generateHTML(item));
+        });
+    }
+    bern_html.forEach((person) => {
+        main.appendChild(person);
     });
 });
 
 lausanne.addEventListener("click", () => {
     removeAllChildNodes(main);
-    lausanne_list.forEach((item) => {
-        main.appendChild(generateHTML(item));
+    const lausanne_people = powercoders.filter(
+        (person) => person.location === "Lausanne"
+    );
+    if (!lausanne_html.length) {
+        lausanne_people.forEach((item) => {
+            lausanne_html.push(generateHTML(item));
+        });
+    }
+    lausanne_html.forEach((person) => {
+        main.appendChild(person);
     });
 });
 
 all.addEventListener("click", () => {
     removeAllChildNodes(main);
-    powercoders.forEach((item) => {
-        main.appendChild(generateHTML(item));
+    all_html.forEach((person) => {
+        main.appendChild(person);
     });
 });
 
 window.addEventListener("load", () => {
     powercoders.forEach((item) => {
-        const elements = generateHTML(item);
-        main.appendChild(elements);
-    });
-    powercoders.forEach((item) => {
-        if (item.location === "Zurich") {
-            zurich_list.push(item);
-        } else if (item.location === "Bern") {
-            bern_list.push(item);
-        } else if (item.location === "Lausanne") {
-            lausanne_list.push(item);
-        }
+        const person = generateHTML(item);
+        person.onclick = (element) => {
+            console.log(element.target.parentElement);
+        };
+
+        all_html.push(person);
+        main.appendChild(person);
     });
 });
 
@@ -123,7 +147,3 @@ function removeAllChildNodes(parent) {
         parent.removeChild(parent.firstChild);
     }
 }
-
-const zurich_list = [];
-const bern_list = [];
-const lausanne_list = [];
