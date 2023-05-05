@@ -1,56 +1,43 @@
-/* split the big problem in small and solvable problem 
-2. add password protection 
-3. delete item
-4. mark item as done
-5. sort the list alphabetically
-*/
 let ul = document.querySelector("ul");
-let input = document.querySelector("input");
-let button = document.querySelector("button");
-let array = [];
-let errormessage = "";
+let body = document.querySelector("body");
 
-button.addEventListener("click", addListItem);
-input.addEventListener("keypress", checkIfReturnKey);
-
-function checkIfReturnKey(event) {
-    if (event.keyCode === 13) {
-        //return key
-        addListItem();
-    }
+if (localStorage.getItem("todos")) {
+    displayData();
+} else {
+    fetch("https://jsonplaceholder.typicode.com/users/1/todos")
+        .then((response) => response.json())
+        .then((json) => localStorage.setItem("todos", JSON.stringify(json)))
+        .then(() => displayData());
 }
 
-function isInputValid() {
-    input.value = input.value.trim();
-    if (input.value !== "") {
-        for (let i = 0; i < array.length; i++) {
-            if (array[i] === input.value) {
-                // it is a duplicate
-                errormessage = "This to-do is already in your list.";
-                return false;
-            }
-        }
-        return true;
-    }
-    errormessage = "Please enter something to do.";
-    return false;
-}
+function displayData() {
+    const todos = JSON.parse(localStorage.getItem("todos"));
+    console.log(todos);
+    const completed = todos
+        .filter((item) => item.completed == true)
+        .map((item) => item.title)
+        .sort();
+    const uncompleted = todos
+        .filter((item) => item.completed == false)
+        .map((item) => item.title)
+        .sort();
 
-function addListItem() {
-    if (isInputValid()) {
-        array.push(input.value);
-        let li = document.createElement("li");
-        li.innerText = input.value;
+    console.log(completed);
+
+    for (const todo of uncompleted) {
+        const li = document.createElement("li");
+        li.textContent = todo;
         ul.appendChild(li);
-        clearInput();
-    } else {
-        clearInput();
-        alert(errormessage);
+        li.addEventListener("click", () => handleClickEvent);
     }
-}
+    const count = document.createElement("p");
+    count.textContent = `Uncompleted: ${uncompleted.length} / Completed: ${completed.length}`;
+    body.appendChild(count);
 
-function clearInput() {
-    input.value = "";
-    input.placeholder = "enter new item";
-    input.focus();
+    for (const todo of completed) {
+        const li = document.createElement("li");
+        li.textContent = todo;
+        li.classList = "completed";
+        ul.appendChild(li);
+    }
 }
