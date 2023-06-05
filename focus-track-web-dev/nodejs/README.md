@@ -38,7 +38,7 @@ POST /jokes with json body { "joke": "<joke here>" } # reads the json body and a
 
 8. Start local dev server with `npm run start`, server should zhen be live on `http://localhost:3000/`.
 
-9. Oprional: Test the routes with [Insomnia](https://insomnia.rest/download) or [Postman](https://www.postman.com/downloads/).
+9. Optional: Test the routes with [Insomnia](https://insomnia.rest/download) or [Postman](https://www.postman.com/downloads/).
 
 10. Create a new GitHub reposity and push your local repo to this new GitHub repo.
 
