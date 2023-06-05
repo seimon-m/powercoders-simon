@@ -17,7 +17,7 @@ GET /another-page # returns an HTML file. It contains the title "Hello Again" an
 
 -   Hints:
     -   Use Google if you face a problem, express has a large developer community.
-    -   When testing the web server, make sure to always save your changes, stop the running server with `Ctrl + c` and run the server again with `node server.js`.
+    -   When testing the web server, make sure to always save your changes, stop the running server with `Ctrl + c` and run the server again with `npm run start`.
 
 5. Create the script `start`, which runs the server: `"start": "node server.js"`
 
@@ -36,7 +36,9 @@ GET /jokes # returns all the jokes as json
 POST /jokes with json body { "joke": "<joke here>" } # reads the json body and adds the joke to the jokesDatabase. Remember to add the body parser.
 ```
 
-9. Test the routes with [Insomnia](https://insomnia.rest/download) or [Postman](https://www.postman.com/downloads/).
+8. Start local dev server with `npm run start`, server should zhen be live on `http://localhost:3000/`.
+
+9. Oprional: Test the routes with [Insomnia](https://insomnia.rest/download) or [Postman](https://www.postman.com/downloads/).
 
 10. Create a new GitHub reposity and push your local repo to this new GitHub repo.
 
